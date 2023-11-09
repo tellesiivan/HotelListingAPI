@@ -12,5 +12,5 @@ public class Hotel
     // [ForeignKey("CountryId")] : Can manually add the name OR reference it by field name
     [ForeignKey(nameof(CountryId))]
     public int CountryId { get; set; }
-    public Country Country { get; set; } 
+    public Country? Country { get; set; } 
 }
