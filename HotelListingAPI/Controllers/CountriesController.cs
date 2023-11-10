@@ -1,11 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HotelListingAPI.Data;
+using HotelListingAPI.Models.Country;
 using Microsoft.IdentityModel.Tokens;
 
 namespace HotelListingAPI.Controllers;
@@ -16,60 +13,78 @@ namespace HotelListingAPI.Controllers;
     {
         // represents a copy of our HotelListingDbContext
         private readonly HotelListingDbContext _context;
+        private readonly IMapper _mapper;
 
-        public CountriesController(HotelListingDbContext context)
+        public CountriesController(HotelListingDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: /Countries/all
         [HttpGet("all")]
-        public async Task<ActionResult<IEnumerable<Country>>> GetCountries()
+        public async Task<ActionResult<IEnumerable<GetCountryDto>>> GetCountries()
         {
           if (_context.Countries.IsNullOrEmpty())
           {
               return NotFound();
           }
-            return Ok(await _context.Countries.ToListAsync());
+          Console.WriteLine("BEFORE RESPONSE");
+
+          
+          var countries = await _context.Countries.ToListAsync();
+          var response = _mapper.Map<List<GetCountryDto>>(countries);
+          
+          Console.WriteLine("AFTER RESPONSE");
+              
+            return Ok(response);
         }
 
         // GET: api/Countries/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Country>> GetCountry(int id)
+        public async Task<ActionResult<CountryDetailsDto>> GetCountry(int id)
         {
           if (_context.Countries.IsNullOrEmpty())
           {
               return NotFound();
           }
-            var country = await _context.Countries.FindAsync(id);
+            var country = await _context.Countries.Include(country => country.Hotels)
+                .FirstOrDefaultAsync(country => country.Id == id);
 
             if (country is null)
             {
                 return NotFound();
             }
 
-            return country;
+            var response = _mapper.Map<CountryDetailsDto>(country);
+
+            return Ok(response);
         }
 
         // PUT: api/Countries/5
         // To protect from over posting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCountry(int id, Country country)
+        [HttpPut("update")]
+        public async Task<IActionResult> PutCountry(UpdateCountryDto updatedCountry)
         {
-            if (id != country.Id)
+       
+            var country = await _context.Countries.FindAsync(updatedCountry.Id);
+
+            if (country is null)
             {
-                return BadRequest();
+                return NotFound();
             }
 
-            _context.Entry(country).State = EntityState.Modified;
-
+            // with Mapper, we use the values passed in(updatedCountry) to update the values of the matched country by id
+            // ef automatically knows state has been modified
+            _mapper.Map(updatedCountry, country);
+            
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CountryExists(id))
+                if (!CountryExists(updatedCountry.Id))
                 {
                     return NotFound();
                 }
@@ -81,8 +96,12 @@ namespace HotelListingAPI.Controllers;
         // POST: api/Countries/add
         // To protect from over posting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost("add")]
-        public async Task<ActionResult<Country>> PostCountry(Country country)
+        public async Task<ActionResult<Country>> PostCountry(CountryDto newCountry)
         {
+            // no id needed(auto generated)
+            var country = _mapper.Map<Country>(newCountry);
+       
+            
           if (_context.Countries == null)
           {
               return Problem("Entity set 'HotelListingDbContext.Countries'  is null.");
