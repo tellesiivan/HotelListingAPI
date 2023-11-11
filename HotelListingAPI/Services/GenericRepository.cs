@@ -10,7 +10,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
     private readonly HotelListingDbContext _context;
     private readonly IMapper _mapper;
     
-    public GenericRepository(HotelListingDbContext dbContext, IMapper mapper)
+    protected GenericRepository(HotelListingDbContext dbContext, IMapper mapper)
     {
         _mapper = mapper;
         _context = dbContext;

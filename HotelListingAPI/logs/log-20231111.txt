@@ -1,0 +1,15 @@
+2023-11-11 12:37:33.754 -08:00 [INF] Now listening on: http://localhost:5063
+2023-11-11 12:37:33.798 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-11 12:37:33.798 -08:00 [INF] Hosting environment: Development
+2023-11-11 12:37:33.798 -08:00 [INF] Content root path: /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI
+2023-11-11 12:37:55.600 -08:00 [WRN] Failed to determine the https port for redirect.
+2023-11-11 12:37:56.757 -08:00 [INF] HTTP GET /api/Hotels responded 200 in 1149.1491 ms
+2023-11-11 12:38:16.412 -08:00 [INF] HTTP GET /api/Hotels/1 responded 200 in 165.9921 ms
+2023-11-11 12:39:02.527 -08:00 [INF] HTTP PUT /api/Hotels/Update responded 200 in 147.8577 ms
+2023-11-11 12:39:26.802 -08:00 [INF] HTTP GET /api/Hotels/1 responded 200 in 17.4137 ms
+2023-11-11 12:39:49.656 -08:00 [INF] Application is shutting down...
+2023-11-11 12:40:57.407 -08:00 [INF] Now listening on: http://localhost:5063
+2023-11-11 12:40:57.450 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-11 12:40:57.450 -08:00 [INF] Hosting environment: Development
+2023-11-11 12:40:57.450 -08:00 [INF] Content root path: /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI
+2023-11-11 12:41:01.866 -08:00 [INF] Application is shutting down...
