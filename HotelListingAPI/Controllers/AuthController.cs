@@ -7,6 +7,7 @@ using HotelListingAPI.Services.AuthManager;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace HotelListingAPI.Controllers
 {
@@ -47,8 +48,14 @@ namespace HotelListingAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> Login([FromBody]LoginDto loginDto)
         {
-            var isValidUser = await  _authManager.Login(loginDto);
-            return isValidUser ? Ok() : Unauthorized();
+            var authResponse = await  _authManager.Login(loginDto);
+
+            if (authResponse.Token.IsNullOrEmpty() || authResponse.UserId.IsNullOrEmpty())
+            {
+                return Unauthorized();
+            }
+            
+            return Ok(authResponse);
         }
     }
 }

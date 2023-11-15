@@ -1,11 +1,14 @@
+using System.Text;
 using HotelListingAPI.Configurations;
 using HotelListingAPI.Data;
 using HotelListingAPI.Services;
 using HotelListingAPI.Services.AuthManager;
 using HotelListingAPI.Services.Country;
 using HotelListingAPI.Services.Hotel;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -51,6 +54,31 @@ builder.Services
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<HotelListingDbContext>();
     
+
+// JWT Setup
+builder.Services.AddAuthentication((options) =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme; // "Bearer" (Magic string)
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme; // "Bearer" (Magic string)
+})
+    .AddJwtBearer(options =>
+    {
+        var signingKey = (string)builder.Configuration["JwtSettings:Key"]!;
+        var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(signingKey));
+        
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            // simple security operations
+            ValidateIssuerSigningKey = true,
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true, 
+            ClockSkew = TimeSpan.Zero,
+            ValidIssuer = builder.Configuration["JwtSettings:Issuer"], 
+            ValidAudience = builder.Configuration["JwtSettings:Audience"],
+            IssuerSigningKey = symmetricSecurityKey
+        };
+    });
 
 var app = builder.Build();
 
