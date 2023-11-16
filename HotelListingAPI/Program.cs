@@ -52,7 +52,8 @@ builder.Services.AddScoped<IAuthManager, AuthManager>();
 builder.Services
     .AddIdentityCore<ApiUser>()
     .AddRoles<IdentityRole>()
-    .AddEntityFrameworkStores<HotelListingDbContext>();
+    .AddTokenProvider<DataProtectorTokenProvider<ApiUser>>("HotelListingAPI")
+    .AddEntityFrameworkStores<HotelListingDbContext>().AddDefaultTokenProviders();
     
 
 // JWT Setup
@@ -90,6 +91,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthentication();
 app.UseAuthorization();
 app.UseCors("AllowAll");
 

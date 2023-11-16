@@ -1,0 +1,129 @@
+2023-11-15 20:22:31.005 -08:00 [INF] Now listening on: http://localhost:5063
+2023-11-15 20:22:31.050 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-15 20:22:31.050 -08:00 [INF] Hosting environment: Development
+2023-11-15 20:22:31.050 -08:00 [INF] Content root path: /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI
+2023-11-15 20:23:00.216 -08:00 [WRN] Failed to determine the https port for redirect.
+2023-11-15 20:23:14.040 -08:00 [INF] Application is shutting down...
+2023-11-15 20:23:30.359 -08:00 [INF] Now listening on: http://localhost:5063
+2023-11-15 20:23:30.402 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-15 20:23:30.402 -08:00 [INF] Hosting environment: Development
+2023-11-15 20:23:30.402 -08:00 [INF] Content root path: /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI
+2023-11-15 20:23:37.160 -08:00 [WRN] Failed to determine the https port for redirect.
+2023-11-15 20:23:38.952 -08:00 [INF] HTTP POST /api/Auth/registration responded 200 in 1768.2017 ms
+2023-11-15 20:23:48.274 -08:00 [INF] Application is shutting down...
+2023-11-15 20:27:23.641 -08:00 [INF] Now listening on: http://localhost:5063
+2023-11-15 20:27:23.681 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-15 20:27:23.681 -08:00 [INF] Hosting environment: Development
+2023-11-15 20:27:23.681 -08:00 [INF] Content root path: /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI
+2023-11-15 20:27:58.563 -08:00 [WRN] Failed to determine the https port for redirect.
+2023-11-15 20:28:00.150 -08:00 [INF] HTTP POST /api/Auth/login responded 200 in 1548.7368 ms
+2023-11-15 20:28:16.940 -08:00 [INF] Application is shutting down...
+2023-11-15 20:28:40.923 -08:00 [INF] Now listening on: http://localhost:5063
+2023-11-15 20:28:40.965 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-15 20:28:40.965 -08:00 [INF] Hosting environment: Development
+2023-11-15 20:28:40.965 -08:00 [INF] Content root path: /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI
+2023-11-15 20:29:24.160 -08:00 [WRN] Failed to determine the https port for redirect.
+2023-11-15 20:29:34.098 -08:00 [INF] Application is shutting down...
+2023-11-15 20:29:54.018 -08:00 [INF] Now listening on: http://localhost:5063
+2023-11-15 20:29:54.062 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-15 20:29:54.062 -08:00 [INF] Hosting environment: Development
+2023-11-15 20:29:54.062 -08:00 [INF] Content root path: /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI
+2023-11-15 20:30:07.187 -08:00 [WRN] Failed to determine the https port for redirect.
+2023-11-15 20:30:08.452 -08:00 [INF] HTTP GET /api/Countries/all responded 200 in 1239.8903 ms
+2023-11-15 20:31:17.734 -08:00 [INF] Application is shutting down...
+2023-11-15 20:31:19.911 -08:00 [INF] Now listening on: http://localhost:5063
+2023-11-15 20:31:19.952 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-15 20:31:19.952 -08:00 [INF] Hosting environment: Development
+2023-11-15 20:31:19.952 -08:00 [INF] Content root path: /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI
+2023-11-15 20:31:32.918 -08:00 [WRN] Failed to determine the https port for redirect.
+2023-11-15 20:31:34.210 -08:00 [INF] HTTP GET /api/Countries/all responded 200 in 1245.0460 ms
+2023-11-15 20:31:54.512 -08:00 [INF] HTTP DELETE /countries/6 responded 404 in 0.0210 ms
+2023-11-15 20:32:38.653 -08:00 [INF] HTTP DELETE /api/countries/6 responded 200 in 325.1921 ms
+2023-11-15 20:34:59.661 -08:00 [INF] Application is shutting down...
+2023-11-15 22:01:32.165 -08:00 [INF] Now listening on: http://localhost:5063
+2023-11-15 22:01:32.207 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-15 22:01:32.208 -08:00 [INF] Hosting environment: Development
+2023-11-15 22:01:32.208 -08:00 [INF] Content root path: /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI
+2023-11-15 22:01:53.203 -08:00 [WRN] Failed to determine the https port for redirect.
+2023-11-15 22:01:53.452 -08:00 [ERR] HTTP POST /api/Auth/login responded 500 in 215.8900 ms
+System.Exception: User was not found
+   at HotelListingAPI.Services.AuthManager.AuthManager.Login(LoginDto loginDto) in /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI/Services/AuthManager/AuthManager.cs:line 64
+   at HotelListingAPI.Controllers.AuthController.Login(LoginDto loginDto) in /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI/Controllers/AuthController.cs:line 52
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2023-11-15 22:01:53.460 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: User was not found
+   at HotelListingAPI.Services.AuthManager.AuthManager.Login(LoginDto loginDto) in /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI/Services/AuthManager/AuthManager.cs:line 64
+   at HotelListingAPI.Controllers.AuthController.Login(LoginDto loginDto) in /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI/Controllers/AuthController.cs:line 52
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-11-15 22:02:11.453 -08:00 [ERR] HTTP POST /api/Auth/login responded 500 in 18.4280 ms
+System.Exception: User was not found
+   at HotelListingAPI.Services.AuthManager.AuthManager.Login(LoginDto loginDto) in /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI/Services/AuthManager/AuthManager.cs:line 64
+   at HotelListingAPI.Controllers.AuthController.Login(LoginDto loginDto) in /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI/Controllers/AuthController.cs:line 52
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2023-11-15 22:02:11.455 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: User was not found
+   at HotelListingAPI.Services.AuthManager.AuthManager.Login(LoginDto loginDto) in /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI/Services/AuthManager/AuthManager.cs:line 64
+   at HotelListingAPI.Controllers.AuthController.Login(LoginDto loginDto) in /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI/Controllers/AuthController.cs:line 52
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-11-15 22:02:18.529 -08:00 [INF] Application is shutting down...
+2023-11-15 22:05:06.712 -08:00 [INF] Now listening on: http://localhost:5063
+2023-11-15 22:05:06.753 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-15 22:05:06.753 -08:00 [INF] Hosting environment: Development
+2023-11-15 22:05:06.753 -08:00 [INF] Content root path: /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI
+2023-11-15 22:05:23.259 -08:00 [WRN] Failed to determine the https port for redirect.
+2023-11-15 22:05:25.104 -08:00 [INF] HTTP POST /api/Auth/login responded 200 in 1805.1190 ms
+2023-11-15 22:05:39.444 -08:00 [INF] Application is shutting down...

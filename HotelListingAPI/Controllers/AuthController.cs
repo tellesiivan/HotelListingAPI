@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using HotelListingAPI.Models.User;
 using HotelListingAPI.Services.AuthManager;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -51,6 +52,22 @@ namespace HotelListingAPI.Controllers
             var authResponse = await  _authManager.Login(loginDto);
 
             if (authResponse.Token.IsNullOrEmpty() || authResponse.UserId.IsNullOrEmpty())
+            {
+                return Unauthorized();
+            }
+            
+            return Ok(authResponse);
+        }
+        
+        [HttpPost("refreshtoken")]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> RefreshToken([FromBody]AuthResponse request)
+        {
+            var authResponse = await  _authManager.VerifyRefreshAuthToken(request);
+
+            if (authResponse is null)
             {
                 return Unauthorized();
             }
