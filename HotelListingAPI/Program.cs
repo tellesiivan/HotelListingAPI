@@ -1,6 +1,7 @@
 using System.Text;
 using HotelListingAPI.Configurations;
 using HotelListingAPI.Data;
+using HotelListingAPI.Middleware;
 using HotelListingAPI.Services;
 using HotelListingAPI.Services.AuthManager;
 using HotelListingAPI.Services.Country;
@@ -89,6 +90,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// watch for exceptions been thrown 
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
 app.UseAuthentication();

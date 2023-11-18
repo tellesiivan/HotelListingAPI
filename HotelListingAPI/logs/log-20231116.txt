@@ -1,0 +1,5 @@
+2023-11-16 11:43:52.278 -08:00 [INF] Now listening on: http://localhost:5063
+2023-11-16 11:43:52.318 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-16 11:43:52.318 -08:00 [INF] Hosting environment: Development
+2023-11-16 11:43:52.318 -08:00 [INF] Content root path: /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI
+2023-11-16 11:44:12.198 -08:00 [INF] Application is shutting down...

@@ -16,8 +16,8 @@ public class AuthManager: IAuthManager
     private readonly UserManager<ApiUser> _userManager;
     private readonly IConfiguration _configuration;
     private ApiUser _apiUser;
-    private const string _tokenProvider = "HotelListingAPI";
-    private const string _tokenName = "RefreshToken";
+    private const string TokenProvider = "HotelListingAPI";
+    private const string TokenName = "RefreshToken";
 
     public AuthManager(IMapper mapper, UserManager<ApiUser> userManager, IConfiguration configuration)
     {
@@ -90,20 +90,20 @@ public class AuthManager: IAuthManager
     public async Task<string> CreateRefreshToken()
     {
         // remove the old token
-        await _userManager.RemoveAuthenticationTokenAsync(_apiUser, _tokenProvider, _tokenName);
+        await _userManager.RemoveAuthenticationTokenAsync(_apiUser, TokenProvider, TokenName);
         // create new token
         var refreshedTokenCreated =
-            await _userManager.GenerateUserTokenAsync(_apiUser, _tokenProvider,
-                _tokenName);
+            await _userManager.GenerateUserTokenAsync(_apiUser, TokenProvider,
+                TokenName);
         // set new token
         var tokenResponse = await _userManager.SetAuthenticationTokenAsync(_apiUser,
-            _tokenProvider,
-            _tokenName, refreshedTokenCreated);
+            TokenProvider,
+            TokenName, refreshedTokenCreated);
             
         return !tokenResponse.Succeeded ? "Unable to create new token" : refreshedTokenCreated;
     }
 
-    public async Task<AuthResponse?> VerifyRefreshAuthToken(AuthResponse request)
+    public async Task<AuthResponse> VerifyRefreshAuthToken(AuthResponse request)
     {
         var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
         var tokenContent = jwtSecurityTokenHandler.ReadJwtToken(request.Token);
@@ -123,7 +123,7 @@ public class AuthManager: IAuthManager
         _apiUser = userFound;
 
         var isValidToken =
-            await _userManager.VerifyUserTokenAsync(_apiUser, _tokenProvider, _tokenName,
+            await _userManager.VerifyUserTokenAsync(_apiUser, TokenProvider, TokenName,
                 request.Token);
 
         if (!isValidToken)

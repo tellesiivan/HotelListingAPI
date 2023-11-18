@@ -2,6 +2,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HotelListingAPI.Data;
+using HotelListingAPI.Exceptions;
 using HotelListingAPI.Models.Country;
 using HotelListingAPI.Services.Country;
 using Microsoft.AspNetCore.Authorization;
@@ -39,7 +40,7 @@ namespace HotelListingAPI.Controllers;
 
             if (country is null)
             {
-                return NotFound();
+                throw new NotFoundException(nameof(GetCountry), id);
             }
 
             var response = _mapper.Map<CountryDetailsDto>(country);
