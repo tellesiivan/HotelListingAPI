@@ -24,8 +24,8 @@ namespace HotelListingAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<HotelDto>>> GetHotels()
         {
-            var hotels = await _hotelRepository.GetAllAsync();
-            return Ok(_mapper.Map<List<HotelDto>>(hotels));
+            var response = await _hotelRepository.GetAllAsync<HotelDto>();
+            return Ok(response);
         }
 
         // GET: api/Hotels/5

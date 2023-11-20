@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HotelListingAPI.Data;
 using HotelListingAPI.Exceptions;
+using HotelListingAPI.Models;
 using HotelListingAPI.Models.Country;
 using HotelListingAPI.Services.Country;
 using Microsoft.AspNetCore.Authorization;
@@ -27,8 +28,23 @@ namespace HotelListingAPI.Controllers;
         public async Task<ActionResult<IEnumerable<GetCountryDto>>> GetCountries()
         {
           
-          var countries = await _countriesRepository.GetAllAsync();
-          var response = _mapper.Map<List<GetCountryDto>>(countries);
+          var countries = await _countriesRepository.GetAllAsync<GetCountryDto>();
+            return Ok(countries);
+        }
+        
+        // GET: api/countries?startIndex=0&pageSize=25&pageNumber=1
+        [HttpGet("paginatedAll")]
+        public async Task<ActionResult<QueryResult<GetCountryDto>>> GetPagedCountries([FromQuery] QueryParameters queryParameters)
+        {
+
+            var response = await _countriesRepository.
+                GetAllAsync<GetCountryDto>(queryParameters);
+            
+            if (response.Data is null)
+            {
+                throw new NotFoundException(nameof(GetPagedCountries), queryParameters);
+            }
+            
             return Ok(response);
         }
 

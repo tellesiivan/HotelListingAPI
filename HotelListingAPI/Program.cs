@@ -8,8 +8,11 @@ using HotelListingAPI.Services.Country;
 using HotelListingAPI.Services.Hotel;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Net.Http.Headers;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -82,6 +85,37 @@ builder.Services.AddAuthentication((options) =>
         };
     });
 
+// versioning
+builder.Services.AddApiVersioning(options =>
+{
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    // 1.0
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+    options.ReportApiVersions = true;
+    options.ApiVersionReader = ApiVersionReader.Combine(
+            // declares which version is declared and used at the time
+            new QueryStringApiVersionReader("api-version"),
+            new HeaderApiVersionReader("X-Version"),
+            new MediaTypeApiVersionReader("ver")
+    );
+});
+
+
+// version api explorer
+builder.Services.AddVersionedApiExplorer(options =>
+{
+    // specify how we want our versioning to look(format)
+    options.GroupNameFormat = "'v'VVV";
+    options.SubstituteApiVersionInUrl = true;
+});
+
+// add app caching(persist api response for specified amount of time before making a request to the db)
+builder.Services.AddResponseCaching(options =>
+{
+    options.MaximumBodySize = 1024;
+    options.UseCaseSensitivePaths = true;
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -98,6 +132,20 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseCors("AllowAll");
+
+// enable middleware
+app.UseResponseCaching();
+
+app.Use(async (context, next) =>
+{
+    context.Response.GetTypedHeaders().CacheControl = new CacheControlHeaderValue()
+    {
+        Public = true,
+        MaxAge = TimeSpan.FromSeconds(10)
+    };
+    context.Response.Headers[HeaderNames.Vary] = new string[] { "Accept-Encoding" };
+    await next();
+});
 
 // serilog
 app.UseSerilogRequestLogging();
