@@ -1,5 +1,7 @@
 using System.Net;
 using HotelListingAPI.Exceptions;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
 namespace HotelListingAPI.Middleware;

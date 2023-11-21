@@ -1,0 +1,10 @@
+2023-11-20 22:26:26.258 -08:00 [INF] Now listening on: http://localhost:5063
+2023-11-20 22:26:26.312 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-20 22:26:26.313 -08:00 [INF] Hosting environment: Development
+2023-11-20 22:26:26.313 -08:00 [INF] Content root path: /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI
+2023-11-20 22:26:37.674 -08:00 [WRN] Failed to determine the https port for redirect.
+2023-11-20 22:26:38.973 -08:00 [INF] HTTP GET /api/Countries/all responded 200 in 1269.8080 ms
+2023-11-20 22:27:18.656 -08:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-11-20 22:27:18.658 -08:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-11-20 22:27:18.692 -08:00 [INF] HTTP GET /api/Countries/paginatedAll responded 200 in 196.3339 ms
+2023-11-20 22:27:31.987 -08:00 [INF] Application is shutting down...

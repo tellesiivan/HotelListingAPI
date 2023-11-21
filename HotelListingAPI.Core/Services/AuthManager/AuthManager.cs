@@ -5,8 +5,8 @@ using AutoMapper;
 using HotelListingAPI.Data;
 using HotelListingAPI.Models.User;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using static System.String;
 
 namespace HotelListingAPI.Services.AuthManager;
 
