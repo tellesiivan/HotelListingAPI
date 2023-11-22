@@ -1,0 +1,28 @@
+2023-11-21 21:58:57.632 -08:00 [INF] Now listening on: http://localhost:5063
+2023-11-21 21:58:57.675 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-21 21:58:57.675 -08:00 [INF] Hosting environment: Development
+2023-11-21 21:58:57.675 -08:00 [INF] Content root path: /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI
+2023-11-21 21:59:20.371 -08:00 [INF] Application is shutting down...
+2023-11-21 22:10:01.934 -08:00 [INF] Now listening on: http://localhost:5063
+2023-11-21 22:10:01.979 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-21 22:10:01.979 -08:00 [INF] Hosting environment: Development
+2023-11-21 22:10:01.979 -08:00 [INF] Content root path: /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI
+2023-11-21 22:10:27.390 -08:00 [INF] Application is shutting down...
+2023-11-21 22:20:09.487 -08:00 [INF] Now listening on: http://localhost:5063
+2023-11-21 22:20:09.528 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-21 22:20:09.528 -08:00 [INF] Hosting environment: Development
+2023-11-21 22:20:09.528 -08:00 [INF] Content root path: /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI
+2023-11-21 22:20:45.780 -08:00 [WRN] Failed to determine the https port for redirect.
+2023-11-21 22:21:16.995 -08:00 [INF] user1@example.com is trying to log in: 11/21/2023 12:00:00AM
+2023-11-21 22:21:18.455 -08:00 [ERR] Something went wrong in the Login - User Login for: user1@example.com: 11/21/2023 12:00:00AM
+System.Exception: User was not found
+   at HotelListingAPI.Services.AuthManager.AuthManager.Login(LoginDto loginDto) in /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI.Core/Services/AuthManager/AuthManager.cs:line 64
+   at HotelListingAPI.Controllers.AuthController.Login(LoginDto loginDto) in /Users/tellesivan/Desktop/c#/HotelListingAPI/HotelListingAPI/Controllers/AuthController.cs:line 63
+2023-11-21 22:21:18.478 -08:00 [ERR] HTTP POST /api/Auth/login responded 500 in 1716.8685 ms
+2023-11-21 22:21:32.203 -08:00 [INF] admin@example.com is trying to log in: 11/21/2023 12:00:00AM
+2023-11-21 22:21:32.825 -08:00 [INF] HTTP POST /api/Auth/login responded 200 in 627.0214 ms
+2023-11-21 22:22:04.567 -08:00 [INF] HTTP GET /api/Countries/all responded 200 in 64.9130 ms
+2023-11-21 22:22:19.372 -08:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-11-21 22:22:19.373 -08:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-11-21 22:22:19.381 -08:00 [INF] HTTP GET /api/Countries/paginatedAll responded 200 in 74.8621 ms
+2023-11-21 22:22:24.195 -08:00 [INF] Application is shutting down...
